@@ -3,31 +3,30 @@ package br.com.project.eCommerce.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import br.com.project.eCommerce.dtos.UserDTO;
+import br.com.project.eCommerce.dtos.UserReturnDTO;
 import br.com.project.eCommerce.entities.UserEntity;
 import br.com.project.eCommerce.repositories.UserRepository;
 
 @Service
 public class UserService {
-	
+
 	@Autowired
 	private UserRepository userRepository;
 
-	public boolean createUser(UserDTO user) {
+	public UserReturnDTO createUser(UserDTO user) {
 		if (!checkExistingUser(user)) {
-			return false;
+			return new UserReturnDTO(false);
 		}
-		String password = encryptingPassword(user);
-		 
-		return true;
+		userRepository.save(new UserEntity(user));
+		return new UserReturnDTO(true);
 	}
-	
-	private String encryptingPassword(UserDTO user) {
-		BCryptPasswordEncoder criptografar = new BCryptPasswordEncoder();
-		return criptografar.encode(user.getPassword());
+
+	public UserReturnDTO validateUser(UserDTO user) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	private boolean checkExistingUser(UserDTO user) {

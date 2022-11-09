@@ -1,5 +1,7 @@
 package br.com.project.eCommerce.entities;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,6 +22,8 @@ public class SalesEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	private BigDecimal sumSales;
 
 	@JoinColumn(name = "user_id", referencedColumnName = "id")
 	@ManyToOne

@@ -6,4 +6,6 @@ import br.com.project.eCommerce.entities.ProductEntity;
 
 public interface ProductRepository extends JpaRepository<ProductEntity, Long>{
 
+	ProductEntity findAByName(String name);
+
 }

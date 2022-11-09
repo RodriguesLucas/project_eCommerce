@@ -1,7 +1,5 @@
 package br.com.project.eCommerce.entities;
 
-import java.math.BigDecimal;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,7 +28,7 @@ public class ProductEntity {
 
 	private String platforms;
 
-	private BigDecimal price;
+	private Double price;
 
 	@Column(name = "image_url")
 	private String image;
@@ -79,11 +77,11 @@ public class ProductEntity {
 		this.platforms = platforms;
 	}
 
-	public BigDecimal getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(BigDecimal price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 

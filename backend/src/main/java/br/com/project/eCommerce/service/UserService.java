@@ -1,5 +1,8 @@
 package br.com.project.eCommerce.service;
 
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,11 +27,14 @@ public class UserService {
 			return new UserReturnDTO(false);
 		}
 
+		encryptedPassword(user);
+
 		userRepository.save(new UserEntity(user));
 		return new UserReturnDTO(true);
 	}
 
 	public UserReturnDTO validateUser(UserDTO user) {
+		encryptedPassword(user);
 		Optional<UserEntity> optional = userRepository.findByNameAndPassword(user.getName(), user.getPassword());
 		UserReturnDTO dto = new UserReturnDTO();
 
@@ -50,6 +56,24 @@ public class UserService {
 	private Optional<UserEntity> checkExistingUser(UserDTO user) {
 		Optional<UserEntity> optional = userRepository.findByName(user.getName());
 		return optional;
+	}
+
+	private void encryptedPassword(UserDTO user) {
+		StringBuilder hexString = new StringBuilder();
+		try {
+			MessageDigest algorithm = MessageDigest.getInstance("SHA-256");
+
+			byte messageDigest[] = algorithm.digest(user.getPassword().getBytes("UTF-8"));
+
+			for (byte b : messageDigest) {
+				hexString.append(String.format("%02X", 0xFF & b));
+			}
+
+		} catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+
+		user.setPassword(hexString.toString());
 	}
 
 }

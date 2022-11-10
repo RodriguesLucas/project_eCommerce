@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import br.com.project.eCommerce.dtos.ProductDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -35,6 +36,15 @@ public class ProductEntity {
 
 	public ProductEntity() {
 
+	}
+
+	public ProductEntity(ProductDTO productDTO) {
+		this.image = productDTO.getImage();
+		this.launchYear = productDTO.getLaunchYear();
+		this.name = productDTO.getName();
+		this.price = productDTO.getPrice();
+		this.stock = productDTO.getStock();
+		this.platforms = productDTO.getPlatforms();
 	}
 
 	public Long getId() {

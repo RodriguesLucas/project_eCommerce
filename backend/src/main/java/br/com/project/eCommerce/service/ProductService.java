@@ -27,14 +27,10 @@ public class ProductService {
 	}
 
 	public ProductDTO createProduct(ProductDTO productDTO) {
-		ProductEntity entity = new ProductEntity();
-		entity.setImage(productDTO.getImage());
-		entity.setLaunchYear(productDTO.getLaunchYear());
-		entity.setName(productDTO.getName());
-		entity.setPrice(productDTO.getPrice());
-		entity.setStock(productDTO.getStock());
-		entity.setPlatforms(productDTO.getPlatforms());
+		ProductEntity entity = new ProductEntity(productDTO);
+		
 		productRepository.save(entity);
+		
 		return new ProductDTO(entity);
 	}
 

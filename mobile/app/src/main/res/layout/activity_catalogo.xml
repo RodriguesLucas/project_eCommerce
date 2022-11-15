@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back2"
+    android:outlineSpotShadowColor="#000000">
+
+
+    <TableLayout
+        android:id="@+id/bor"
+        android:layout_width="363dp"
+        android:layout_height="558dp"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="106dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+
+            <TextView
+                android:id="@+id/txtProduto"
+                android:layout_width="179dp"
+                android:layout_height="match_parent"
+                android:background="#F2DEB0"
+                android:text="Produto"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/txtEstoque"
+                android:layout_width="72dp"
+                android:layout_height="match_parent"
+                android:background="#F2DEB0"
+                android:outlineSpotShadowColor="#000000"
+                android:text="Estoque"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/txtValor"
+                android:layout_width="112dp"
+                android:layout_height="match_parent"
+                android:width="200dp"
+                android:background="#F2DEB0"
+                android:backgroundTint="#F2DEB0"
+                android:text="Valor"
+                android:textColor="#000000"
+                android:visibility="visible" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

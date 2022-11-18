@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/t"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back2">
+
+    <TextView
+        android:id="@+id/txtLC"
+        android:layout_width="345dp"
+        android:layout_height="44dp"
+        android:background="#F2DEB0"
+        android:text=" Listagem e Cadastro"
+        android:textSize="35dp"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="105dp" />
+
+    <TextView
+        android:id="@+id/txtTV"
+        android:layout_width="340dp"
+        android:layout_height="79dp"
+        android:background="#F2DEB0"
+        android:text="Total das vendas"
+        android:textSize="35dp"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="272dp" />
+
+    <TableLayout
+        android:layout_width="340dp"
+        android:layout_height="108dp"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="156dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtProduto"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="#F2DEB0"
+                android:text="   Produto"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/txtEstoque"
+                android:layout_width="131dp"
+                android:layout_height="wrap_content"
+                android:background="#F2DEB0"
+                android:text="     Estoque"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/txtValor"
+                android:layout_width="111dp"
+                android:layout_height="wrap_content"
+                android:background="#F0DDAF"
+                android:text="    Valor"
+                android:textSize="20dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

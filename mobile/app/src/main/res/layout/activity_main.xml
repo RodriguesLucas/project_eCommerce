@@ -10,7 +10,7 @@
 
 
     <Button
-        android:id="@+id/btnCadastro"
+        android:id="@+id/btnLogin"
         android:layout_width="239dp"
         android:layout_height="54dp"
         android:layout_marginBottom="112dp"

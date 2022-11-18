@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!checkUserAndPassoword()){
-                    if(validateLogin(user, password)){
+                if (!checkUserAndPassoword()) {
+                    if (validateLogin(user, password)) {
                         // Chama outra tela
                     } else {
                         Toast.makeText(getApplicationContext(), "Usuário ou senha incorreto!", Toast.LENGTH_SHORT).show();
@@ -52,10 +52,10 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean checkUserAndPassoword() {
         boolean check = false;
-        if (user.getText().toString().isEmpty()){
+        if (user.getText().toString().isEmpty()) {
             Toast.makeText(getApplicationContext(), "Usuário não pode ser vazio!", Toast.LENGTH_SHORT).show();
             check = true;
-        } else if (password.getText().toString().isEmpty()){
+        } else if (password.getText().toString().isEmpty()) {
             Toast.makeText(getApplicationContext(), "Senha não pode ser vazia!", Toast.LENGTH_SHORT).show();
             check = true;
         }
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         params.add("user", user);
         params.add("password", password);
 
-        client.get("http://localhost:80/user/validate", new AsyncHttpResponseHandler() {
+        client.get("https://app-e-commerce.herokuapp.com/user/validate", params, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] response) {
                 String data = new String(response);

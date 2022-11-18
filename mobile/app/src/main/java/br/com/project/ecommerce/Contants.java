@@ -5,9 +5,10 @@ public enum Contants {
 
     private final String value;
 
-    Contants(String value){
+    Contants(String value) {
         this.value = value;
     }
+
     public String getValue() {
         return value;
     }

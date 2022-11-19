@@ -26,16 +26,16 @@ public class UserService {
 		} else if (user.getName().isEmpty() || user.getPassword().isEmpty()) {
 			return new UserReturnDTO(false);
 		}
-
-		encryptedPassword(user);
-
+		
+		user.setPassword(encryptedPassword(user.getPassword()));
+		
 		userRepository.save(new UserEntity(user));
 		return new UserReturnDTO(true);
 	}
 
-	public UserReturnDTO validateUser(UserDTO user) {
-		encryptedPassword(user);
-		Optional<UserEntity> optional = userRepository.findByNameAndPassword(user.getName(), user.getPassword());
+	public UserReturnDTO validateUser(String user, String password) {
+		
+		Optional<UserEntity> optional = userRepository.findByNameAndPassword(user, encryptedPassword(password));
 		UserReturnDTO dto = new UserReturnDTO();
 
 		if (!optional.isEmpty()) {
@@ -58,12 +58,12 @@ public class UserService {
 		return optional;
 	}
 
-	private void encryptedPassword(UserDTO user) {
+	private String encryptedPassword(String password) {
 		StringBuilder hexString = new StringBuilder();
 		try {
 			MessageDigest algorithm = MessageDigest.getInstance("SHA-256");
 
-			byte messageDigest[] = algorithm.digest(user.getPassword().getBytes("UTF-8"));
+			byte messageDigest[] = algorithm.digest(password.getBytes("UTF-8"));
 
 			for (byte b : messageDigest) {
 				hexString.append(String.format("%02X", 0xFF & b));
@@ -73,7 +73,7 @@ public class UserService {
 			e.printStackTrace();
 		}
 
-		user.setPassword(hexString.toString());
+		return hexString.toString();
 	}
 
 }

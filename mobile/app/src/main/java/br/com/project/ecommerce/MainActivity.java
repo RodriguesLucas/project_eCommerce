@@ -2,7 +2,9 @@ package br.com.project.ecommerce;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -36,7 +38,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (!checkUserAndPassoword()) {
                     if (validateLogin(user, password)) {
-                        // Chama outra tela
+                        Intent cat;
+                        if (isAdmin){
+                            Log.d("TAG", "ActivityCadastroItem");
+                            cat = new Intent(getApplicationContext(), ActivityCadastroItem.class);
+                        } else {
+                            Log.d("TAG", "ActivityCatalogo");
+                            cat = new Intent(getApplicationContext(), ActivityCatalogo.class);
+                        }
+                        startActivity(cat);
                     } else {
                         Toast.makeText(getApplicationContext(), "Usuário ou senha incorreto!", Toast.LENGTH_SHORT).show();
                     }
@@ -47,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean validateLogin(TextView user, TextView password) {
         getValueToConvert(user.getText().toString(), password.getText().toString());
+        if (isValid){
+            return true;
+        }
         return false;
     }
 
@@ -65,11 +78,8 @@ public class MainActivity extends AppCompatActivity {
     private void getValueToConvert(String user, String password) {
 
         AsyncHttpClient client = new AsyncHttpClient();
-        RequestParams params = new RequestParams();
-        params.add("user", user);
-        params.add("password", password);
 
-        client.get("https://app-e-commerce.herokuapp.com/user/validate", params, new AsyncHttpResponseHandler() {
+        client.get(createRoute(user, password), new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] response) {
                 String data = new String(response);
@@ -87,15 +97,19 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private String createRoute(String user, String password) {
+        String url = "https://app-e-commerce.herokuapp.com/user/validate/".concat(user).concat("/").concat(password);
+        return url;
+    }
+
 
     private void loadData(String data) throws JSONException {
-        JSONObject resp = new JSONObject(data);
-        isValid = Boolean.getBoolean(resp.get("isValid").toString());
-        isAdmin = Boolean.getBoolean(resp.get("isAdmin").toString());
-
-        UserReturnDTO userReturnDTO = new UserReturnDTO();
-        userReturnDTO.setAdmin(isAdmin);
-        userReturnDTO.setValid(isValid);
+       if (data.contains("\"valid\":true")){
+           this.isValid = true;
+       }
+       if (data.contains("\"admin\":true")){
+           this.isAdmin = true;
+       }
     }
 
 }

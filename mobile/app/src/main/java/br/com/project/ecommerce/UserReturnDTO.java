@@ -1,11 +1,11 @@
 package br.com.project.ecommerce;
 
 public class UserReturnDTO {
-    private boolean isValid;
+    private String isValid;
 
-    private boolean isAdmin;
+    private String isAdmin;
 
-    public UserReturnDTO(boolean value) {
+    public UserReturnDTO(String value) {
         this.isValid = value;
     }
 
@@ -13,19 +13,19 @@ public class UserReturnDTO {
 
     }
 
-    public boolean isValid() {
+    public String isValid() {
         return isValid;
     }
 
-    public void setValid(boolean isValid) {
+    public void setValid(String isValid) {
         this.isValid = isValid;
     }
 
-    public boolean isAdmin() {
+    public String isAdmin() {
         return isAdmin;
     }
 
-    public void setAdmin(boolean isAdmin) {
+    public void setAdmin(String isAdmin) {
         this.isAdmin = isAdmin;
     }
 }

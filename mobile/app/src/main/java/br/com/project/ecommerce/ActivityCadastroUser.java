@@ -48,7 +48,7 @@ public class ActivityCadastroUser extends AppCompatActivity {
 
     private void cadastreUser(String user, String password) {
 
-        AsyncTask.execute(new Runnable() {
+      /*  AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
                 // Create URL
@@ -87,7 +87,7 @@ public class ActivityCadastroUser extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        });
+        });*/
 
     }
 

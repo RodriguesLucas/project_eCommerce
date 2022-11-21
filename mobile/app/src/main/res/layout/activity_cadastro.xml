@@ -25,18 +25,18 @@
         android:id="@+id/txtUsuario"
         android:layout_width="305dp"
         android:layout_height="48dp"
-        android:layout_marginTop="416dp"
+        android:autofillHints=""
         android:background="#FFFFFF"
         android:ems="10"
         android:hint=" Usuário"
         android:inputType="textPersonName"
         android:textColorHint="#78909C"
         android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.556"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtSenha"

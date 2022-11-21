@@ -14,24 +14,35 @@
         android:background="#F2DEB0"
         android:text=" Listagem e Cadastro"
         android:textSize="35dp"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="105dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.147" />
 
     <TextView
         android:id="@+id/txtTV"
         android:layout_width="340dp"
         android:layout_height="79dp"
+        android:layout_marginBottom="380dp"
         android:background="#F2DEB0"
         android:text="Total das vendas"
         android:textSize="35dp"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="272dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="340dp"
         android:layout_height="108dp"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="156dp">
+        app:layout_constraintBottom_toTopOf="@+id/txtTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLC"
+        app:layout_constraintVertical_bias="0.473">
 
         <TableRow
             android:layout_width="match_parent"

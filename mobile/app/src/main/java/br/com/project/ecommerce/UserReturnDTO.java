@@ -1,31 +1,31 @@
 package br.com.project.ecommerce;
 
 public class UserReturnDTO {
-    private String isValid;
+    private boolean valid;
 
-    private String isAdmin;
+    private boolean admin;
 
-    public UserReturnDTO(String value) {
-        this.isValid = value;
+    public UserReturnDTO(boolean value) {
+        this.valid = value;
     }
 
     public UserReturnDTO() {
 
     }
 
-    public String isValid() {
-        return isValid;
+    public boolean isValid() {
+        return valid;
     }
 
-    public void setValid(String isValid) {
-        this.isValid = isValid;
+    public void setValid(boolean isValid) {
+        this.valid = isValid;
     }
 
-    public String isAdmin() {
-        return isAdmin;
+    public boolean isAdmin() {
+        return admin;
     }
 
-    public void setAdmin(String isAdmin) {
-        this.isAdmin = isAdmin;
+    public void setAdmin(boolean isAdmin) {
+        this.admin = isAdmin;
     }
 }

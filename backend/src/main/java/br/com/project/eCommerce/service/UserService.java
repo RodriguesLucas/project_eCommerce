@@ -3,6 +3,7 @@ package br.com.project.eCommerce.service;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,9 @@ import br.com.project.eCommerce.dtos.UserDTO;
 import br.com.project.eCommerce.dtos.UserReturnDTO;
 import br.com.project.eCommerce.entities.UserEntity;
 import br.com.project.eCommerce.repositories.UserRepository;
+import ch.qos.logback.classic.Logger;
+import ch.qos.logback.classic.servlet.LogbackServletContainerInitializer;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
 public class UserService {
@@ -19,7 +23,13 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 
-	public UserReturnDTO createUser(UserDTO user) {
+	public UserReturnDTO createUser(Map<String, String> body) {
+		UserDTO user = new UserDTO();
+		user.setName(body.get("name"));
+		user.setPassword(body.get("password"));
+		user.setAdmin(false);
+		
+		System.out.println("createUser() Start UserDTO: " + user.toString());
 		if (!checkExistingUser(user).isEmpty()) {
 			return new UserReturnDTO(false);
 

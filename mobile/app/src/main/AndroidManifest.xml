@@ -15,7 +15,7 @@
         android:theme="@style/Theme.ECommerce"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +29,7 @@
         </activity>
 
         <activity
-            android:name=".ActivityCatalogo"
+            android:name=".activity.ActivityCatalogo"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,7 +43,7 @@
         </activity>
 
         <activity
-            android:name=".ActivityCadastroItem"
+            android:name=".activity.ActivityCadastroItem"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -57,7 +57,7 @@
         </activity>
 
         <activity
-            android:name=".ActivityCadastroUser"
+            android:name=".activity.ActivityCadastroUser"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -15,6 +15,7 @@ public class ProductDTO {
 	private Double price;
 
 	private String image;
+	
 
 	public ProductDTO(ProductEntity productEntity) {
 		this.name = productEntity.getName();

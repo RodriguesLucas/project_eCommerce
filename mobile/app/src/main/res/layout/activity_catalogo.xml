@@ -23,6 +23,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
+            android:id="@+id/firstRow"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="visible">
@@ -58,19 +59,11 @@
 
         </TableRow>
 
-        <TableRow
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerId"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"/>
 
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
     </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

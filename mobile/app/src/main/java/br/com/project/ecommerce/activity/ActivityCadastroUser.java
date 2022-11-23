@@ -1,4 +1,4 @@
-package br.com.project.ecommerce;
+package br.com.project.ecommerce.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +17,8 @@ import com.loopj.android.http.RequestParams;
 
 import java.io.UnsupportedEncodingException;
 
+import br.com.project.ecommerce.R;
+import br.com.project.ecommerce.dtos.UserReturnDTO;
 import cz.msebera.android.httpclient.Header;
 
 public class ActivityCadastroUser extends AppCompatActivity {

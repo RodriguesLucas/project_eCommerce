@@ -1,8 +1,10 @@
-package br.com.project.ecommerce;
+package br.com.project.ecommerce.activity;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import br.com.project.ecommerce.R;
 
 public class ActivityCadastroItem extends AppCompatActivity {
 

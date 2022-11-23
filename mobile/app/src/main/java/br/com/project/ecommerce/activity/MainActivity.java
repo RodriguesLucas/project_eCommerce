@@ -1,11 +1,9 @@
-package br.com.project.ecommerce;
+package br.com.project.ecommerce.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.JsonReader;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,20 +13,11 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
-import java.net.URL;
 
-import javax.net.ssl.HttpsURLConnection;
-
+import br.com.project.ecommerce.R;
+import br.com.project.ecommerce.dtos.UserReturnDTO;
 import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
@@ -79,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void getValueToConvert(String user, String password) {
         String url = createRoute(user, password);
-        RequestParams requestParams = new RequestParams();
 
         AsyncHttpClient asyncHttpClient = new AsyncHttpClient();
         asyncHttpClient.get(url, new AsyncHttpResponseHandler() {
@@ -96,11 +84,11 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("TAG", "isAdmin: " + userReturnDTO.isAdmin());
                     if (userReturnDTO.isValid()) {
                         if (userReturnDTO.isAdmin()) {
-                            Log.d("TAG", "ActivityCadastroItem");
                             cat = new Intent(getApplicationContext(), ActivityCadastroItem.class);
+
                         } else {
-                            Log.d("TAG", "ActivityCatalogo");
                             cat = new Intent(getApplicationContext(), ActivityCatalogo.class);
+
                         }
                         startActivity(cat);
                     } else {

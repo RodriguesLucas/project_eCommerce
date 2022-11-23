@@ -1,4 +1,4 @@
-package br.com.project.ecommerce;
+package br.com.project.ecommerce.dtos;
 
 public class UserDTO {
     private String name;

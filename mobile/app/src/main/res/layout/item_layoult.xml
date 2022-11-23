@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:stretchColumns="1,2,3">
+
+    <TableRow
+        android:id="@+id/firstRow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+
+        <TextView
+            android:id="@+id/txtProduto_tv"
+            android:layout_width="179dp"
+            android:layout_height="match_parent"
+            android:background="#F2DEB0"
+            android:text="Produto"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/txtEstoque_tv"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:background="#F2DEB0"
+            android:outlineSpotShadowColor="#000000"
+            android:text="Estoque"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/txtValor_tv"
+            android:layout_width="112dp"
+            android:layout_height="match_parent"
+            android:width="200dp"
+            android:background="#F2DEB0"
+            android:backgroundTint="#F2DEB0"
+            android:text="Valor"
+            android:textColor="#000000"
+            android:visibility="visible" />
+
+    </TableRow>
+
+</TableLayout>

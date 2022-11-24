@@ -1,9 +1,7 @@
 package br.com.project.ecommerce;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import br.com.project.ecommerce.activity.ActivityCatalogo;
 import br.com.project.ecommerce.dtos.ProductDTO;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder>{
@@ -34,20 +33,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         if (productDTOList != null && productDTOList.size() > 0){
             ProductDTO productDTO = productDTOList.get(position);
             holder.txtProduto_tv.setText(productDTO.getName());
             holder.txtEstoque_tv.setText(productDTO.getStock().toString());
             holder.txtValor_tv.setText(productDTO.getPrice().toString());
-
-            holder.txtProduto_tv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // position
-                    Log.d("TAG", "onClick: ".concat(productDTOList.get(position).toString()));
-                }
-            });
 
         } else {
             return;

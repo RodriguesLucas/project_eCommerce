@@ -1,6 +1,8 @@
 package br.com.project.ecommerce.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,5 +15,7 @@ public class ActivityDetalhes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhes);
     }
+
+
 
 }

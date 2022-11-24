@@ -45,6 +45,7 @@
         app:layout_constraintVertical_bias="0.473">
 
         <TableRow
+            android:id="@+id/tableRow"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -53,7 +54,8 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:background="#F2DEB0"
-                android:text="   Produto"
+                android:text="PRODUTO"
+                android:textStyle="bold"
                 android:textSize="20dp" />
 
             <TextView
@@ -61,7 +63,8 @@
                 android:layout_width="131dp"
                 android:layout_height="wrap_content"
                 android:background="#F2DEB0"
-                android:text="     Estoque"
+                android:text="ESTOQUE"
+                android:textStyle="bold"
                 android:textSize="20dp" />
 
             <TextView
@@ -69,9 +72,15 @@
                 android:layout_width="111dp"
                 android:layout_height="wrap_content"
                 android:background="#F0DDAF"
-                android:text="    Valor"
+                android:text="VALOR"
+                android:textStyle="bold"
                 android:textSize="20dp" />
         </TableRow>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
         <TableRow
             android:layout_width="match_parent"

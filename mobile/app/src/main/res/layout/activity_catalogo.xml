@@ -34,7 +34,8 @@
                 android:layout_width="179dp"
                 android:layout_height="match_parent"
                 android:background="#F2DEB0"
-                android:text="Produto"
+                android:text="PRODUTO"
+                android:textStyle="bold"
                 android:textColor="#000000" />
 
             <TextView
@@ -43,7 +44,8 @@
                 android:layout_height="match_parent"
                 android:background="#F2DEB0"
                 android:outlineSpotShadowColor="#000000"
-                android:text="Estoque"
+                android:text="ESTOQUE"
+                android:textStyle="bold"
                 android:textColor="#000000" />
 
             <TextView
@@ -53,7 +55,8 @@
                 android:width="200dp"
                 android:background="#F2DEB0"
                 android:backgroundTint="#F2DEB0"
-                android:text="Valor"
+                android:text="VALOR"
+                android:textStyle="bold"
                 android:textColor="#000000"
                 android:visibility="visible" />
 

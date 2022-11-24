@@ -50,6 +50,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 @Override
                 public void onClick(View view) {
                     Log.d("TAG", "onClick: " + position);
+
+                    SharedPreferences sharedPreferences = context.getSharedPreferences("chaveGeral", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("value", String.valueOf(position));
+                    editor.commit();
+
                     Intent intent = new Intent(context, ActivityDetalhes.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
@@ -60,6 +66,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         } else {
             return;
         }
+    }
+
+    private void saveData (String value){
+
     }
 
     @Override

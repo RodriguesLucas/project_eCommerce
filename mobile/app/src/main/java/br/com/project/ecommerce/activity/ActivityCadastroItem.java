@@ -1,5 +1,7 @@
 package br.com.project.ecommerce.activity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +33,7 @@ public class ActivityCadastroItem extends AppCompatActivity {
         recyclerId = findViewById(R.id.recyclerId);
         getList();
     }
+
     private void getList(){
         productDTOList = new ArrayList<ProductDTO>();
 
@@ -64,6 +67,8 @@ public class ActivityCadastroItem extends AppCompatActivity {
         });
 
     }
+
+
 
     private String createRoute() {
         return "https://app-e-commerce.herokuapp.com/product/findAll";

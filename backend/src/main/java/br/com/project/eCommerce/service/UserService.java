@@ -13,9 +13,6 @@ import br.com.project.eCommerce.dtos.UserDTO;
 import br.com.project.eCommerce.dtos.UserReturnDTO;
 import br.com.project.eCommerce.entities.UserEntity;
 import br.com.project.eCommerce.repositories.UserRepository;
-import ch.qos.logback.classic.Logger;
-import ch.qos.logback.classic.servlet.LogbackServletContainerInitializer;
-import lombok.extern.slf4j.Slf4j;
 
 @Service
 public class UserService {

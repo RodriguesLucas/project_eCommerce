@@ -2,45 +2,45 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/detalhesLayout"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back2">
+
 
     <TextView
         android:id="@+id/txtNomeJogo"
         android:layout_width="346dp"
         android:layout_height="76dp"
+        android:layout_marginTop="172dp"
         android:background="#F2DEB0"
         android:text="NOME DO JOGO"
         android:textAlignment="center"
-        android:textSize="35dp"
+        android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@+id/txtAnoAux"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.712" />
-
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtAnoAux"
-        android:layout_width="313dp"
-        android:layout_height="36dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="106dp"
+        android:layout_height="37dp"
         android:background="#F2DEB0"
-        android:text="Ano de Lançamento:"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtValorAux"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.836"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintStart_toEndOf="@+id/txtAno"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445" />
 
     <Button
         android:id="@+id/btnFinalizar"
         android:layout_width="294dp"
         android:layout_height="54dp"
-        android:layout_marginBottom="48dp"
         android:background="#000000"
         android:backgroundTint="#000000"
         android:text="Finalizar Compra"
@@ -49,65 +49,81 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAnoAux"
-        app:layout_constraintVertical_bias="0.825"
+        app:layout_constraintTop_toBottomOf="@+id/txtPlataformaAux"
+        app:layout_constraintVertical_bias="0.474"
         app:rippleColor="#000000"
         app:strokeColor="#000000" />
 
     <TextView
-        android:id="@+id/txtAno"
-        android:layout_width="80dp"
+        android:id="@+id/txtValorAux"
+        android:layout_width="106dp"
         android:layout_height="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtAnoAux"
-        app:layout_constraintEnd_toEndOf="@+id/txtAnoAux"
-        app:layout_constraintHorizontal_bias="0.995"
-        app:layout_constraintStart_toStartOf="@+id/txtAnoAux"
-        app:layout_constraintTop_toTopOf="@+id/txtAnoAux"
+        android:layout_marginTop="384dp"
+        android:layout_marginEnd="168dp"
+        android:layout_marginBottom="315dp"
+        android:background="#F2DEB0"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/txtValorAux"
-        android:layout_width="312dp"
-        android:layout_height="32dp"
-        android:layout_marginBottom="32dp"
+        android:id="@+id/txtPlataformaAux"
+        android:layout_width="151dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="248dp"
         android:background="#F2DEB0"
-        android:text="Valor:"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtPlataformaAux"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.393"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtAno"
+        android:layout_width="240dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="308dp"
+        android:layout_marginBottom="385dp"
+        android:background="#F1DDAF"
+        android:text="Ano de Lançamento:"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtValor1"
-        android:layout_width="245dp"
-        android:layout_height="30dp"
-        app:layout_constraintEnd_toEndOf="@+id/txtValorAux"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/txtValorAux"
-        tools:layout_editor_absoluteY="349dp" />
-
-    <TextView
-        android:id="@+id/txtPlataformaAux"
-        android:layout_width="313dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="32dp"
-        android:background="#F2DEB0"
-        android:text="Plataformas:"
-        android:textSize="25dp"
+        android:layout_width="104dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="384dp"
+        android:layout_marginBottom="315dp"
+        android:background="#F1DDAF"
+        android:text="Valor:"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintEnd_toStartOf="@+id/txtValorAux"
+        app:layout_constraintHorizontal_bias="0.705"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtValor1"
-        app:layout_constraintVertical_bias="0.506" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtPlataforma"
-        android:layout_width="162dp"
+        android:layout_width="145dp"
         android:layout_height="33dp"
-        app:layout_constraintEnd_toEndOf="@+id/txtPlataformaAux"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txtPlataformaAux"
-        tools:layout_editor_absoluteY="424dp" />
+        android:layout_marginTop="450dp"
+        android:layout_marginBottom="248dp"
+        android:background="#F1DDAF"
+        android:text="Plataformas:"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtPlataformaAux"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

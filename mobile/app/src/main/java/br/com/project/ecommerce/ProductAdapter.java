@@ -68,10 +68,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         }
     }
 
-    private void saveData (String value){
-
-    }
-
     @Override
     public int getItemCount() {
         return productDTOList.size();

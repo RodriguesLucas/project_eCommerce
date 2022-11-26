@@ -2,7 +2,9 @@ package br.com.project.ecommerce.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -111,6 +113,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String createRoute(String user, String password) {
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("chaveGeral", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("valueName", user);
+        editor.commit();
+
         String url = "https://app-e-commerce.herokuapp.com/user/validate/".concat(user).concat("/").concat(password);
         return url;
     }

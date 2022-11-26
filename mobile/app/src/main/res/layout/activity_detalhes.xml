@@ -34,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="304dp" />
+        tools:layout_editor_absoluteY="283dp" />
 
     <TextView
         android:id="@+id/txtValor1"
@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toStartOf="@+id/txtAno"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="363dp" />
+        tools:layout_editor_absoluteY="413dp" />
 
     <Button
         android:id="@+id/btnFinalizar"

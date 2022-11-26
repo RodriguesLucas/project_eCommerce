@@ -20,7 +20,9 @@ public class SalesController {
 	private SalesService salesService;
 	
 	@GetMapping("/sum")
-	public double
+	public  PurchaseDTO sumDto() {
+		return salesService.sum();
+	}
 	
 	@PostMapping("/purchase")
 	public PurchaseDTO purchase(@RequestParam Map<String, String> body ) {

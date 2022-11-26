@@ -36,9 +36,9 @@ public class ActivityDetalhes extends AppCompatActivity {
         setContentView(R.layout.activity_detalhes);
 
         txtNomeJogo = findViewById(R.id.txtNomeJogo);
-        txtAno = findViewById(R.id.txtAno);
-        txtValor1 = findViewById(R.id.txtValor1);
-        txtPlataforma = findViewById(R.id.txtPlataforma);
+        txtAno = findViewById(R.id.txtAnoAux);
+        txtValor1 = findViewById(R.id.txtValorAux);
+        txtPlataforma = findViewById(R.id.txtPlataformaAux);
         button = findViewById(R.id.btnFinalizar);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +67,7 @@ public class ActivityDetalhes extends AppCompatActivity {
                     String data = new String(responseBody, "UTF-8");
                     PurchaseDTO userReturnDTO = new Gson().fromJson(data, PurchaseDTO.class);
 
-                    if (!userReturnDTO.isSucess()){
+                    if (userReturnDTO.isSucess()){
                         Toast.makeText(getApplicationContext(), "Compra realizada com sucesso!", Toast.LENGTH_SHORT).show();
                         Thread.sleep(100);
                         Intent cat = new Intent(getApplicationContext(), ActivityCatalogo.class);

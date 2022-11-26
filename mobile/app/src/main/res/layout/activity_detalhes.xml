@@ -9,60 +9,32 @@
 
     <TextView
         android:id="@+id/txtNomeJogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_width="346dp"
+        android:layout_height="76dp"
         android:background="#F2DEB0"
         android:text="NOME DO JOGO"
-        android:textSize="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAlignment="center"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtAnoAux"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.712" />
+
 
     <TextView
-        android:id="@+id/txtAno"
-        android:layout_width="235dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="71dp"
-        android:layout_marginEnd="105dp"
+        android:id="@+id/txtAnoAux"
+        android:layout_width="313dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="32dp"
         android:background="#F2DEB0"
         android:text="Ano de Lançamento:"
-        android:textSize="20dp"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtValorAux"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="283dp" />
-
-    <TextView
-        android:id="@+id/txtValor1"
-        android:layout_width="235dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginEnd="117dp"
-        android:background="#F2DEB0"
-        android:text="Valor:"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="233dp" />
-
-    <TextView
-        android:id="@+id/txtPlataforma"
-        android:layout_width="235dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginEnd="4dp"
-        android:background="#F2DEB0"
-        android:text="Plataformas:"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/txtAno"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="413dp" />
+        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnFinalizar"
@@ -75,10 +47,67 @@
         app:backgroundTint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.341"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAno"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@+id/txtAnoAux"
+        app:layout_constraintVertical_bias="0.825"
         app:rippleColor="#000000"
         app:strokeColor="#000000" />
+
+    <TextView
+        android:id="@+id/txtAno"
+        android:layout_width="80dp"
+        android:layout_height="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtAnoAux"
+        app:layout_constraintEnd_toEndOf="@+id/txtAnoAux"
+        app:layout_constraintHorizontal_bias="0.995"
+        app:layout_constraintStart_toStartOf="@+id/txtAnoAux"
+        app:layout_constraintTop_toTopOf="@+id/txtAnoAux"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txtValorAux"
+        android:layout_width="312dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="#F2DEB0"
+        android:text="Valor:"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtPlataformaAux"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.393"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtValor1"
+        android:layout_width="245dp"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtValorAux"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/txtValorAux"
+        tools:layout_editor_absoluteY="349dp" />
+
+    <TextView
+        android:id="@+id/txtPlataformaAux"
+        android:layout_width="313dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="32dp"
+        android:background="#F2DEB0"
+        android:text="Plataformas:"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtValor1"
+        app:layout_constraintVertical_bias="0.506" />
+
+    <TextView
+        android:id="@+id/txtPlataforma"
+        android:layout_width="162dp"
+        android:layout_height="33dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtPlataformaAux"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtPlataformaAux"
+        tools:layout_editor_absoluteY="424dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

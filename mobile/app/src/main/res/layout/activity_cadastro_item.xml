@@ -22,8 +22,8 @@
 
     <TextView
         android:id="@+id/txtTV"
-        android:layout_width="340dp"
-        android:layout_height="79dp"
+        android:layout_width="338dp"
+        android:layout_height="85dp"
         android:layout_marginBottom="380dp"
         android:background="#F2DEB0"
         android:text="Total das vendas"

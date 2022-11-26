@@ -32,6 +32,9 @@ public class SalesService {
 		
 		SalesEntity salesEntity = new SalesEntity();
 		ProductEntity findAByName = productRepository.findAByName(salesDTO.getProductName());
+		if (findAByName.getStock() <= 0) {
+			return new PurchaseDTO(false);
+		}
 		salesEntity.setProductId(findAByName);
 		salesEntity.setUserId(userRepository.findByName(salesDTO.getUserName()).get());
 		salesEntity.setSumSales(findAByName.getPrice());
@@ -45,6 +48,13 @@ public class SalesService {
 	private void adjustingStock(ProductEntity findAByName) {
 		findAByName.setStock(findAByName.getStock() - 1);
 		productRepository.save(findAByName);
+	}
+
+	public PurchaseDTO sum() {
+		PurchaseDTO dto = new PurchaseDTO();
+		dto.setSucess(true);
+		dto.setSum(salesRepository.sum());
+		return dto;
 	}
 
 }

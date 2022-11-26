@@ -1,8 +1,8 @@
 package br.com.project.ecommerce.activity;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,11 +19,13 @@ import java.util.List;
 import br.com.project.ecommerce.ProductAdapter;
 import br.com.project.ecommerce.R;
 import br.com.project.ecommerce.dtos.ProductDTO;
+import br.com.project.ecommerce.dtos.PurchaseDTO;
 import cz.msebera.android.httpclient.Header;
 
 public class ActivityCadastroItem extends AppCompatActivity {
     RecyclerView recyclerId;
     ProductAdapter adapter;
+    TextView textTv;
     List<ProductDTO> productDTOList;
 
     @Override
@@ -31,7 +33,33 @@ public class ActivityCadastroItem extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_item);
         recyclerId = findViewById(R.id.recyclerId);
+        textTv = findViewById(R.id.txtTV);
+        setTotalSales();
         getList();
+    }
+
+    private void setTotalSales() {
+        String url = "https://app-e-commerce.herokuapp.com/sales/sum";
+
+        AsyncHttpClient asyncHttpClient = new AsyncHttpClient();
+        asyncHttpClient.get(url, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                try {
+                    String data = new String(responseBody, "UTF-8");
+                    PurchaseDTO userReturnDTO = new Gson().fromJson(data, PurchaseDTO.class);
+                    textTv.setText("Total das vendas".concat("\n").concat(String.format("R$: %.2f", userReturnDTO.getSum())));
+
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
     }
 
     private void getList(){

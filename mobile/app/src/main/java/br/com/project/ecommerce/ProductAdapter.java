@@ -49,11 +49,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             holder.txtProduto_tv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.d("TAG", "onClick: " + position);
+
 
                     SharedPreferences sharedPreferences = context.getSharedPreferences("chaveGeral", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("value", String.valueOf(position));
+                    editor.putString("value", holder.txtProduto_tv.getText().toString());
                     editor.commit();
 
                     Intent intent = new Intent(context, ActivityDetalhes.class);

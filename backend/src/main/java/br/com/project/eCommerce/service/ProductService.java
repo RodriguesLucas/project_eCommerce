@@ -1,6 +1,7 @@
 package br.com.project.eCommerce.service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,6 @@ import org.springframework.stereotype.Service;
 import br.com.project.eCommerce.dtos.ProductDTO;
 import br.com.project.eCommerce.entities.ProductEntity;
 import br.com.project.eCommerce.repositories.ProductRepository;
-import lombok.Generated;
 
 @Service
 public class ProductService {
@@ -27,7 +27,15 @@ public class ProductService {
 		return new ProductDTO(findByName);
 	}
 
-	public ProductDTO createProduct(ProductDTO productDTO) {
+	public ProductDTO createProduct(Map<String, String> body ) {
+		ProductDTO productDTO = new ProductDTO();
+		productDTO.setImage(null);
+		productDTO.setLaunchYear(body.get("launchYear"));
+		productDTO.setName(body.get("name"));
+		productDTO.setStock(Long.valueOf(body.get("stock")));
+		productDTO.setPrice(Double.valueOf(body.get("price")));
+		productDTO.setPlatforms(body.get("platforms"));
+
 		ProductEntity entity = new ProductEntity(productDTO);
 		
 		productRepository.save(entity);

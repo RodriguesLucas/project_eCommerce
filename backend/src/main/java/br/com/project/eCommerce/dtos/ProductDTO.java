@@ -26,6 +26,10 @@ public class ProductDTO {
 		this.launchYear = productEntity.getLaunchYear();
 	}
 
+	public ProductDTO() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getName() {
 		return name;
 	}

@@ -1,6 +1,7 @@
 package br.com.project.eCommerce.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.project.eCommerce.dtos.ProductDTO;
@@ -31,8 +33,8 @@ public class ProductController {
 	}
 	
 	@PostMapping("/create/product")
-	public ProductDTO createProduct(@RequestBody ProductDTO productDTO) {
-		return productService.createProduct(productDTO);
+	public ProductDTO createProduct(@RequestParam Map<String, String> body ) {
+		return productService.createProduct(body);
 	}
 	
 }

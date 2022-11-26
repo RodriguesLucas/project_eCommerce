@@ -1,5 +1,7 @@
 package br.com.project.eCommerce.service;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +25,10 @@ public class SalesService {
 	@Autowired
 	private SalesRepository salesRepository;
 
-	public PurchaseDTO purchase(SalesDTO salesDTO) {
+	public PurchaseDTO purchase(Map<String, String> body) {
+		SalesDTO salesDTO = new SalesDTO();
+		salesDTO.setProductName(body.get("productName"));
+		salesDTO.setUserName(body.get("userName"));
 		
 		SalesEntity salesEntity = new SalesEntity();
 		ProductEntity findAByName = productRepository.findAByName(salesDTO.getProductName());

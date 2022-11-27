@@ -1,5 +1,6 @@
 package br.com.project.ecommerce.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -71,12 +72,19 @@ public class ActivityCadastroItem extends AppCompatActivity {
                                 ProductReturnDTO userReturnDTO = new Gson().fromJson(data, ProductReturnDTO.class);
                                 if (userReturnDTO.isSucess()){
                                     Toast.makeText(getApplicationContext(), "Producto criado com sucesso!", Toast.LENGTH_SHORT).show();
+
+                                    Thread.sleep(100);
+                                    Intent cat = new Intent(getApplicationContext(), ActivityCadastroItem.class);
+                                    startActivity(cat);
+
                                 } else {
-                                    Toast.makeText(getApplicationContext(), "Error! Já existe um produto com esse nome.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Error! Já existe um produto equivalente com este nome.", Toast.LENGTH_SHORT).show();
                                 }
                                 Log.d("TAG", "onSuccessValue: ".concat(data));
 
                             } catch (UnsupportedEncodingException e) {
+                                e.printStackTrace();
+                            } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
                         }

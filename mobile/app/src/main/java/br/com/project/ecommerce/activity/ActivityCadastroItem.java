@@ -32,7 +32,7 @@ public class ActivityCadastroItem extends AppCompatActivity {
     RecyclerView recyclerId;
     ProductAdapter adapter;
     Button btnCadastroItem;
-    TextView textTv, txtPlatCad, txtAnoCad, txtNome, txtValor2;
+    TextView textTv, txtPlatCad, txtAnoCad, txtNome, txtValor2, txtEstoque1;
     List<ProductDTO> productDTOList;
 
     @Override
@@ -47,6 +47,7 @@ public class ActivityCadastroItem extends AppCompatActivity {
         txtAnoCad = findViewById(R.id.txtAnoCad);
         txtNome = findViewById(R.id.txtNome);
         txtValor2 = findViewById(R.id.txtValor2);
+        txtEstoque1 = findViewById(R.id.txtEstoque1);
 
         setTotalSales();
         getList();
@@ -60,7 +61,7 @@ public class ActivityCadastroItem extends AppCompatActivity {
                     RequestParams requestParams = new RequestParams();
                     requestParams.add("name", txtNome.getText().toString());
                     requestParams.add("launchYear", txtAnoCad.getText().toString());
-                    requestParams.add("stock", "10");
+                    requestParams.add("stock", txtEstoque1.getText().toString());
                     requestParams.add("price", txtValor2.getText().toString());
                     requestParams.add("platforms", txtPlatCad.getText().toString());
                     AsyncHttpClient asyncHttpClient = new AsyncHttpClient();

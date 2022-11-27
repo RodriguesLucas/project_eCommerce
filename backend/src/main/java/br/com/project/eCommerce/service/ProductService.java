@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.project.eCommerce.dtos.ProductDTO;
+import br.com.project.eCommerce.dtos.ProductReturnDTO;
 import br.com.project.eCommerce.entities.ProductEntity;
 import br.com.project.eCommerce.repositories.ProductRepository;
 
@@ -27,7 +28,7 @@ public class ProductService {
 		return new ProductDTO(findByName);
 	}
 
-	public ProductDTO createProduct(Map<String, String> body ) {
+	public ProductReturnDTO createProduct(Map<String, String> body ) {
 		ProductDTO productDTO = new ProductDTO();
 		productDTO.setImage(null);
 		productDTO.setLaunchYear(body.get("launchYear"));
@@ -35,12 +36,17 @@ public class ProductService {
 		productDTO.setStock(Long.valueOf(body.get("stock")));
 		productDTO.setPrice(Double.valueOf(body.get("price")));
 		productDTO.setPlatforms(body.get("platforms"));
-
+		
+		
+		if (productRepository.getByName(productDTO.getName()).isPresent()) {
+			return new ProductReturnDTO(false);
+		}
+			
 		ProductEntity entity = new ProductEntity(productDTO);
 		
 		productRepository.save(entity);
 		
-		return new ProductDTO(entity);
+		return new ProductReturnDTO(true);
 	}
 
 }

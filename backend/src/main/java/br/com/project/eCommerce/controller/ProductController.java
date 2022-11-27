@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.project.eCommerce.dtos.ProductDTO;
+import br.com.project.eCommerce.dtos.ProductReturnDTO;
 import br.com.project.eCommerce.service.ProductService;
 
 @RestController
@@ -32,7 +33,7 @@ public class ProductController {
 	}
 	
 	@PostMapping("/create/product")
-	public ProductDTO createProduct(@RequestParam Map<String, String> body ) {
+	public ProductReturnDTO createProduct(@RequestParam Map<String, String> body ) {
 		return productService.createProduct(body);
 	}
 	

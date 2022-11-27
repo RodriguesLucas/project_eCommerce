@@ -52,7 +52,7 @@
         android:background="#FFFFFF"
         android:ems="10"
         android:hint=" Senha"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textColor="#000000"
         android:textColorHint="#78909C"
         android:textColorLink="#000000"

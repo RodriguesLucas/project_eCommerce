@@ -41,16 +41,15 @@
         android:id="@+id/btnFinalizar"
         android:layout_width="294dp"
         android:layout_height="54dp"
+        android:layout_marginTop="48dp"
         android:background="#000000"
         android:backgroundTint="#000000"
         android:text="Finalizar Compra"
         app:backgroundTint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPlataformaAux"
-        app:layout_constraintVertical_bias="0.474"
         app:rippleColor="#000000"
         app:strokeColor="#000000" />
 

@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/txtStock"
-        android:layout_width="105dp"
-        android:layout_height="36dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginBottom="120dp"
         android:background="#F1DDAF"
@@ -212,9 +212,9 @@
 
     <EditText
         android:id="@+id/txtAnoCad"
-        android:layout_width="160dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="162dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:background="#F1DDAF"
         android:backgroundTint="#F1DDAF"
@@ -229,8 +229,8 @@
 
     <EditText
         android:id="@+id/txtNome"
-        android:layout_width="284dp"
-        android:layout_height="31dp"
+        android:layout_width="280dp"
+        android:layout_height="33dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="4dp"
         android:background="#F1DDAF"
@@ -243,5 +243,13 @@
         app:layout_constraintStart_toEndOf="@+id/txtNomeAux"
         app:layout_constraintTop_toBottomOf="@+id/txtTV"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/txtEstoque1"
+        android:layout_width="247dp"
+        android:layout_height="36dp"
+        android:background="#F0DCAE"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="575dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

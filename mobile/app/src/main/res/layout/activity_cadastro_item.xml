@@ -12,12 +12,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginTop="12dp"
         android:background="#F1DDAF"
         android:text="Estoque:"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPlatCadAux" />
 
     <TextView
         android:id="@+id/txtLC"
@@ -28,33 +28,34 @@
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.147" />
+        app:layout_constraintVertical_bias="0.135" />
 
     <TextView
         android:id="@+id/txtTV"
         android:layout_width="338dp"
         android:layout_height="85dp"
-        android:layout_marginBottom="380dp"
+        android:layout_marginTop="20dp"
         android:background="#F2DEB0"
         android:text="Total das vendas"
+        android:textAlignment="center"
         android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="340dp"
         android:layout_height="108dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtTV"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtLC"
-        app:layout_constraintVertical_bias="0.473">
+        app:layout_constraintTop_toBottomOf="@+id/txtLC">
 
         <TableRow
             android:id="@+id/tableRow"
@@ -112,24 +113,22 @@
         android:layout_width="196dp"
         android:layout_height="34dp"
         android:layout_marginStart="32dp"
-        android:layout_marginBottom="262dp"
+        android:layout_marginTop="16dp"
         android:background="#F1DDAF"
         android:text="Ano lançamento:"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomeAux"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeAux" />
 
     <TextView
         android:id="@+id/txtValor2Aux"
         android:layout_width="71dp"
         android:layout_height="35dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:background="#F1DDAF"
         android:text="Valor:"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtPlatCadAux"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtAnoCadAux" />
 
@@ -138,83 +137,78 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginBottom="168dp"
+        android:layout_marginTop="12dp"
         android:background="#F1DDAF"
         android:text="Plataformas:"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtValor2Aux" />
 
     <TextView
         android:id="@+id/txtNomeAux"
         android:layout_width="79dp"
         android:layout_height="33dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
         android:background="#F1DDAF"
         android:text="Nome:"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtAnoCad"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTV"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTV" />
 
     <EditText
         android:id="@+id/txtValor2"
-        android:layout_width="284dp"
-        android:layout_height="36dp"
+        android:layout_width="288dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="80dp"
         android:background="#F1DDAF"
         android:backgroundTint="#F1DDAF"
         android:ems="10"
         android:inputType="numberDecimal"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtPlatCad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/txtValor2Aux"
         app:layout_constraintTop_toBottomOf="@+id/txtAnoCad"
-        app:layout_constraintVertical_bias="0.538"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btnCadastroItem"
         android:layout_width="239dp"
         android:layout_height="54dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginTop="16dp"
         android:text="Cadastrar"
         android:textColor="#FFFFFF"
         app:backgroundTint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPlatCad"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@+id/txtEstoque1"
         app:rippleColor="#000000"
         app:strokeColor="#000000" />
 
     <EditText
         android:id="@+id/txtPlatCad"
-        android:layout_width="211dp"
-        android:layout_height="34dp"
+        android:layout_width="216dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="4dp"
-        android:layout_marginBottom="168dp"
         android:background="#F1DDAF"
         android:backgroundTint="#F1DDAF"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/txtPlatCadAux"
+        app:layout_constraintTop_toBottomOf="@+id/txtValor2"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/txtAnoCad"
-        android:layout_width="162dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="163dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:background="#F1DDAF"
         android:backgroundTint="#F1DDAF"
@@ -229,10 +223,10 @@
 
     <EditText
         android:id="@+id/txtNome"
-        android:layout_width="280dp"
+        android:layout_width="281dp"
         android:layout_height="33dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
         android:background="#F1DDAF"
         android:backgroundTint="#F1DDAF"
         android:ems="10"
@@ -244,12 +238,19 @@
         app:layout_constraintTop_toBottomOf="@+id/txtTV"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-    <TextView
+    <EditText
         android:id="@+id/txtEstoque1"
-        android:layout_width="247dp"
-        android:layout_height="36dp"
+        android:layout_width="261dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="13dp"
         android:background="#F0DCAE"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="575dp" />
+        android:ems="10"
+        android:inputType="number|textPersonName"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/txtStock"
+        app:layout_constraintTop_toBottomOf="@+id/txtPlatCad"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

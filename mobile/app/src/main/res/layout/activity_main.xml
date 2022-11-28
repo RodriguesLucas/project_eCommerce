@@ -86,7 +86,7 @@
         android:id="@+id/btnCadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="36dp"
         android:background="#00FFFFFF"
         android:text="Cadastre-se"
         android:textColor="#00695C"

@@ -113,7 +113,11 @@ public class ActivityCadastroItem extends AppCompatActivity {
         } else if (txtPlatCad.getText().toString().isEmpty()) {
             Toast.makeText(getApplicationContext(), "Plataforma não pode ser vazio!", Toast.LENGTH_SHORT).show();
             return true;
+        } else if (txtEstoque1.getText().toString().isEmpty()) {
+            Toast.makeText(getApplicationContext(), "Estoque não pode ser vazio!", Toast.LENGTH_SHORT).show();
+            return true;
         }
+
         return check;
     }
 

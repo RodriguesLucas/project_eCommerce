@@ -26,7 +26,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class ActivityDetalhes extends AppCompatActivity {
 
-    TextView txtNomeJogo, txtAno, txtValor1, txtPlataforma;
+    TextView txtNomeJogo, txtAno, txtValor1, txtPlataforma, txtEstoque3;
 
     Button button;
 
@@ -40,6 +40,7 @@ public class ActivityDetalhes extends AppCompatActivity {
         txtValor1 = findViewById(R.id.txtValorAux);
         txtPlataforma = findViewById(R.id.txtPlataformaAux);
         button = findViewById(R.id.btnFinalizar);
+        txtEstoque3 = findViewById(R.id.txtEstoque3);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,7 +113,7 @@ public class ActivityDetalhes extends AppCompatActivity {
                     txtAno.setText(product.getLaunchYear());
                     txtPlataforma.setText(product.getPlatforms());
                     txtValor1.setText(product.getPrice().toString());
-
+                    txtEstoque3.setText(product.getStock().toString());
                 } catch (IOException e) {
                     e.printStackTrace();
 

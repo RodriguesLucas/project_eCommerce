@@ -44,7 +44,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             ProductDTO productDTO = productDTOList.get(position);
             holder.txtProduto_tv.setText(productDTO.getName());
             holder.txtEstoque_tv.setText(productDTO.getStock().toString());
-            holder.txtValor_tv.setText(productDTO.getPrice().toString());
+            holder.txtValor_tv.setText(" R$: ".concat(productDTO.getPrice().toString()));
 
             holder.txtProduto_tv.setOnClickListener(new View.OnClickListener() {
                 @Override

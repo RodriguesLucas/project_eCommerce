@@ -29,7 +29,7 @@
 
             <TextView
                 android:id="@+id/txtProduto"
-                android:layout_width="179dp"
+                android:layout_width="166dp"
                 android:layout_height="match_parent"
                 android:background="#F2DEB0"
                 android:text="PRODUTO"
@@ -38,7 +38,7 @@
 
             <TextView
                 android:id="@+id/txtEstoque"
-                android:layout_width="72dp"
+                android:layout_width="88dp"
                 android:layout_height="match_parent"
                 android:background="#F2DEB0"
                 android:outlineSpotShadowColor="#000000"
@@ -48,7 +48,7 @@
 
             <TextView
                 android:id="@+id/txtValor"
-                android:layout_width="112dp"
+                android:layout_width="101dp"
                 android:layout_height="match_parent"
                 android:width="200dp"
                 android:background="#F2DEB0"

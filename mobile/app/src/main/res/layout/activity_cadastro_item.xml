@@ -64,7 +64,7 @@
 
             <TextView
                 android:id="@+id/txtProduto"
-                android:layout_width="100dp"
+                android:layout_width="148dp"
                 android:layout_height="wrap_content"
                 android:background="#F2DEB0"
                 android:text="PRODUTO"
@@ -73,7 +73,7 @@
 
             <TextView
                 android:id="@+id/txtEstoque"
-                android:layout_width="131dp"
+                android:layout_width="102dp"
                 android:layout_height="wrap_content"
                 android:background="#F2DEB0"
                 android:text="ESTOQUE"
